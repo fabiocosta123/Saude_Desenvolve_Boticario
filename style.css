@@ -67,24 +67,3 @@ body{
     object-fit: cover; /* Cobre todo o espaço sem distorcer a imagem */
     margin-bottom: 10px;
 }
-
-
-.slide-container {
-    position: absolute;
-    top: 10%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: green;
-    font-size: 30px;
-    font-weight: bold;
-  }
-  
-  .slide {
-    opacity: 0;
-    transition: opacity 0.5s ease-in-out;
-  }
-  
-  .active {
-    opacity: 1;
-  }
