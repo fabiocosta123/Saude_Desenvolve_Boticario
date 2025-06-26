@@ -2,6 +2,29 @@
 
 Um site **responsivo** e **colaborativo** dedicado à promoção da saúde física e mental, com foco na população brasileira.
 
+# 📊 Acompanhamento do Projeto - Saúde Desenvolve Boticário
+
+## 📅 Cronograma Semanal
+
+- **1ª Semana**
+  - Início: 25/06/2025  
+  - Término: 02/07/2025
+
+- **2ª Semana**
+  - Início: 03/07/2025  
+  - Término: 10/07/2025
+
+_Ao fim da 2ª semana, atualizaremos o andamento das próximas etapas do projeto._
+
+---
+
+## 🚀 Atualizações de Deploy
+
+O deploy será atualizado ao final de cada semana, refletindo os avanços realizados no desenvolvimento.
+
+🔗 **Acesse o projeto aqui:** [Saúde Desenvolve Boticário](https://fabiocosta123.github.io/Saude_Desenvolve_Boticario/)
+
+
 ---
 
 ## 📚 Índice
