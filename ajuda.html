@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculadora IMC e TMB</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <style>
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f8f9fa;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 500px;
+        margin: auto;
+        background: #fff5b7;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+      }
+
+      h2 {
+        text-align: center;
+        color: #9bc8c4;
+        margin-bottom: 20px;
+      }
+
+      label {
+        display: block;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+
+      input,
+      select {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #9bc8c4;
+        border-radius: 8px;
+      }
+
+      button {
+        margin-top: 20px;
+        width: 100%;
+        padding: 12px;
+        background-color: #9bc8c4;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-weight: bold;
+      }
+
+      .resultado {
+        margin-top: 20px;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 15px;
+        border-radius: 10px;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.5s ease;
+      }
+
+      .mostrar {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      .abaixo {
+        background-color: #f1c40f;
+        color: #333;
+      }
+      .normal {
+        background-color: #2ecc71;
+        color: white;
+      }
+      .sobrepeso {
+        background-color: #f39c12;
+        color: white;
+      }
+      .obesidade1 {
+        background-color: #e67e22;
+        color: white;
+      }
+      .obesidade2 {
+        background-color: #e74c3c;
+        color: white;
+      }
+      .obesidade3 {
+        background-color: #c0392b;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Calculadora IMC -->
+    <div class="container">
+      <h2><i class="fas fa-weight"></i> Calculadora de IMC</h2>
+      <form id="formIMC">
+        <label for="peso">Peso (kg):</label>
+        <input type="number" id="peso" step="0.1" required />
+
+        <label for="altura">Altura (m):</label>
+        <input type="number" id="altura" step="0.01" required />
+
+        <button type="submit">Calcular IMC</button>
+      </form>
+      <div id="resultadoIMC" class="resultado"></div>
+    </div>
+
+    <!-- Calculadora TMB -->
+    <div class="container">
+      <h2><i class="fas fa-fire-alt"></i> Calculadora de TMB</h2>
+      <form id="formTMB">
+        <label for="sexo">Sexo:</label>
+        <select id="sexo" required>
+          <option value="">Selecione</option>
+          <option value="feminino">Feminino</option>
+          <option value="masculino">Masculino</option>
+        </select>
+
+        <label for="pesoTMB">Peso (kg):</label>
+        <input type="number" id="pesoTMB" required step="0.1" />
+
+        <label for="alturaTMB">Altura (cm):</label>
+        <input type="number" id="alturaTMB" required />
+
+        <label for="idadeTMB">Idade (anos):</label>
+        <input type="number" id="idadeTMB" required />
+
+        <button type="submit">Calcular TMB</button>
+      </form>
+      <div
+        id="resultadoTMB"
+        class="resultado mostrar"
+        style="background-color: #ecf0f1; color: #2c3e50"
+      ></div>
+    </div>
+
+    <script>
+      // Calculadora de IMC
+      document
+        .getElementById("formIMC")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const peso = parseFloat(document.getElementById("peso").value);
+          const altura = parseFloat(document.getElementById("altura").value);
+          const resultado = document.getElementById("resultadoIMC");
+
+          resultado.className = "resultado"; // limpa classes
+
+          if (peso > 0 && altura > 0) {
+            const imc = peso / (altura * altura);
+            let classificacao = "";
+            let classe = "";
+
+            if (imc < 18.5) {
+              classificacao = "Abaixo do peso";
+              classe = "abaixo";
+            } else if (imc < 24.9) {
+              classificacao = "Peso normal";
+              classe = "normal";
+            } else if (imc < 29.9) {
+              classificacao = "Sobrepeso";
+              classe = "sobrepeso";
+            } else if (imc < 34.9) {
+              classificacao = "Obesidade grau I";
+              classe = "obesidade1";
+            } else if (imc < 39.9) {
+              classificacao = "Obesidade grau II";
+              classe = "obesidade2";
+            } else {
+              classificacao = "Obesidade grau III (mórbida)";
+              classe = "obesidade3";
+            }
+
+            resultado.innerHTML = `Seu IMC é <strong>${imc.toFixed(
+              2
+            )}</strong> — ${classificacao}`;
+            resultado.classList.add(classe, "mostrar");
+          } else {
+            resultado.innerHTML = "Preencha os campos corretamente.";
+          }
+        });
+
+      // Calculadora de TMB
+      document
+        .getElementById("formTMB")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          const sexo = document.getElementById("sexo").value;
+          const peso = parseFloat(document.getElementById("pesoTMB").value);
+          const altura = parseFloat(document.getElementById("alturaTMB").value);
+          const idade = parseInt(document.getElementById("idadeTMB").value);
+          const resultado = document.getElementById("resultadoTMB");
+
+          if (!sexo || !peso || !altura || !idade) {
+            resultado.textContent = "Preencha todos os campos corretamente.";
+            return;
+          }
+
+          let tmb;
+
+          if (sexo === "feminino") {
+            tmb = 10 * peso + 6.25 * altura - 5 * idade - 161;
+          } else {
+            tmb = 10 * peso + 6.25 * altura - 5 * idade + 5;
+          }
+
+          resultado.innerHTML = `Sua TMB é <strong>${tmb.toFixed(
+            2
+          )}</strong> kcal/dia.`;
+        });
+    </script>
+    <!-- Dicas práticas -->
+    <div class="container" style="background-color: #fff5b7">
+      <h2 style="color: #56b88b">
+        <i class="fas fa-leaf"></i> Dicas para uma vida mais saudável
+      </h2>
+      <ul style="line-height: 1.8; font-size: 16px; color: #2c3e50">
+        <li>
+          🧘‍♀️ Pratique atividades físicas com regularidade, mesmo que sejam
+          leves. Encontre uma atividade de que goste, como caminhada ou dança. O
+          importante é se movimentar pelo menos 3 vezes por semana.
+        </li>
+        <li>
+          🍎 Inclua frutas, verduras e alimentos naturais na sua alimentação.
+          Procure variar nas escolhas e evite o consumo excessivo de alimentos
+          processados.
+        </li>
+        <li>
+          💧 Beba bastante água ao longo do dia. A hidratação é essencial para o
+          bom funcionamento do organismo.
+        </li>
+        <li>
+          😴 Tenha uma rotina de sono equilibrada. Evite telas e estímulos antes
+          de dormir para melhorar a qualidade do seu descanso.
+        </li>
+        <li>
+          🧠 Cuide da sua saúde mental com pausas, hobbies e apoio quando
+          necessário. Gerenciar o estresse é essencial para o bem-estar.
+        </li>
+        <li>
+          🩺 Faça check-ups regularmente para manter a saúde em dia e prevenir
+          doenças.
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
