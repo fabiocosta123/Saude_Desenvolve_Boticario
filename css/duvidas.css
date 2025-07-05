@@ -1,0 +1,241 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('../img/png2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+}
+.logo {
+    width: 4%;
+    height: auto;
+    margin: 0 auto;
+    margin-left: 100px;
+}
+
+.page-header {
+    width: 100%;
+    height: 70px;
+}
+.navbar {
+    display: flex;
+    justify-content: flex-start; /* Alinha itens à esquerda */
+    gap: 20px;
+    align-items: self-position;
+    background-color: #b3b5b5;
+    padding: 10px 30px; /* Aumenta o espaço interno à esquerda e direita */
+    margin-left: 100px; /* Afasta o menu do canto esquerdo da página */
+    margin-right: 100px; /* Afasta do canto direito, se quiser também */
+    border-radius: 20px; /* (opcional) deixa o menu mais elegante */
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+.navbar a img {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+.gif-caixa {
+    width: 30px;
+    height: 30px;
+    margin-right: 5px;
+}
+/* Aplica texto branco ao conteúdo geral */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('../img/png2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    color: rgb(15, 14, 14); /* Aqui define a cor branca padrão */
+}
+
+/* Caso o texto de algum elemento não herde do body, você pode reforçar: */
+h1, h2, p, li, .reflection-message, .header-subtitle, .highlight-box {
+    color: rgb(10, 9, 9);
+}
+.page-header {
+    width: 100%;
+    text-align: center; /* Centraliza o texto */
+    margin-top: 20px;
+}
+.content-section {
+    max-width: 6000px;         /* Limita a largura para facilitar a leitura */
+    margin: 40px auto;        /* Centraliza horizontalmente */
+    padding: 20px;
+    text-align: left;         /* Mantém texto alinhado à esquerda (mais natural para leitura) */
+    background-color: rgba(231, 226, 226, 0.5); /* Opcional: fundo escuro sem perder a imagem de fundo */
+    border-radius: 10px;      /* Borda arredondada */
+}
+h1 {
+    font-size: 2.5rem;        /* Tamanho maior para destaque */
+    margin-bottom: 20px;      /* Espaço abaixo do título */
+}
+.page-footer {
+    display: flex;
+    justify-content: space-between; /* Coloca um botão à esquerda e outro à direita */
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(0, 0, 0, 0.5); /* opcional: cor de fundo do rodapé */
+    margin-top: 50px;
+}
+.footer-button {
+    padding: 10px 20px;
+    background-color: #575858;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.footer-button:hover {
+    background-color: #242020;
+}
+
+.footer-button.primary {
+    background-color: #5a5959; /* cor diferente para o botão da direita */
+}
+
+.footer-button.primary:hover {
+    background-color: #2a2b2b;
+}
+.page-footer img {
+    width: 50px; /* Tamanho do logo */
+    height: auto;
+}
+.page-footer p {
+    color: white; /* Cor do texto do rodapé */
+    font-size: 1rem; /* Tamanho do texto */
+    margin: 0; /* Remove margens */
+}
+.page-footer a {
+    color: white; /* Cor do link */
+    text-decoration: none; /* Remove sublinhado */
+}
+
+.page-footer a:hover {
+    text-decoration: underline; /* Adiciona sublinhado ao passar o mouse */
+}
+
+.page-footer .footer-buttons {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os botões */
+}
+
+.page-footer .footer-buttons a {
+    padding: 10px 20px;
+    background-color: #575858; /* Cor de fundo dos botões */
+    color: white; /* Cor do texto dos botões */
+    text-decoration: none; /* Remove sublinhado */
+    border-radius: 8px; /* Bordas arredondadas */
+    font-weight: bold; /* Texto em negrito */
+    transition: background-color 0.3s ease; /* Transição suave ao passar o mouse */
+}
+.page-footer .footer-buttons a:hover {
+    background-color: #242020; /* Cor de fundo ao passar o mouse */
+}
+.page-footer .footer-buttons a.primary {
+    background-color: #5a5959; /* Cor diferente para o botão da direita */
+}
+.page-footer .footer-buttons a.primary:hover {
+    background-color: #2a2b2b; /* Cor de fundo ao passar o mouse para o botão da direita */
+}
+.page-footer .footer-buttons a img {
+    width: 30px; /* Tamanho do ícone */
+    height: 30px; /* Tamanho do ícone */
+    margin-right: 5px; /* Espaçamento entre o ícone e o texto */
+}
+.page-footer .footer-buttons a img.gif-caixa {
+    width: 30px; /* Tamanho do ícone */
+    height: 30px; /* Tamanho do ícone */
+    margin-right: 5px; /* Espaçamento entre o ícone e o texto */
+}
+.page-footer .footer-buttons a img.gif-caixa {
+    width: 30px; /* Tamanho do ícone */
+    height: 30px; /* Tamanho do ícone */
+    margin-right: 5px; /* Espaçamento entre o ícone e o texto */
+}
+
+/* Para telas pequenas (celulares) */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 20px;
+  }
+
+  .navbar a {
+    font-size: 1rem;
+    margin: 5px 0;
+  }
+
+  .logo {
+    width: 40px;
+    margin-left: 0;
+  }
+
+  .content-section {
+    padding: 10px;
+    margin: 20px auto;
+  }
+
+  .page-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .footer-button {
+    width: 100%;
+    text-align: center;
+    margin: 5px 0;
+  }
+
+  .page-footer {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 10px 20px;
+  }
+}
+
+/* Para tablets */
+@media (min-width: 601px) and (max-width: 1024px) {
+  .navbar a {
+    font-size: 1.1rem;
+  }
+
+  .page-header h1 {
+    font-size: 2rem;
+  }
+
+  .content-section {
+    padding: 20px;
+  }
+
+  .footer-button {
+    padding: 12px 24px;
+  }
+}
+/* Para desktops */
+@media (min-width: 1025px) {
+  .navbar a {
+    font-size: 1.2rem;
+  }
+
+  .page-header h1 {
+    font-size: 2.5rem;
+  }
+
+  .content-section {
+    padding: 20px;
+  }
+
+  .footer-button {
+    padding: 14px 28px;
+  }
+}
