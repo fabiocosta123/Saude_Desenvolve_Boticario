@@ -1,0 +1,67 @@
+/* Layout Body, Header e Footer */
+body{
+    background-color: #0d0d0e;
+    background-repeat: no-repeat;
+    font-family: "Roboto", "Times New Roman", Times, serif;
+    background-size: cover;
+    margin: 10px; 
+    padding: 50px;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../img/exercicio_arlivre.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.3; /* ajuste a claridade aqui */
+  z-index: -1;
+}
+
+header,
+footer {
+  text-align: center; /* Centraliza o texto */
+  padding: 1rem;  
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+/*Sobre nós*/
+#sobre, p, h1, h2 {
+    padding: 1rem;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 0px;
+    z-index: 5;
+    color: #FFFFFF; 
+    width: 80%;
+    margin-left: 10%;
+}
+
+/* Equipe*/
+ul {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 10px;
+    line-height: 1.6; /* espaça os textos da equipe */ 
+    color: #f5f1f1;  
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    gap: 50px;
+    list-style: none;
+}
+
+#equipe{
+    text-align: center;
+}
+
+#equipe a{
+    color: #9ef513;
+}
